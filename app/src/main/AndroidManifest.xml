@@ -19,13 +19,20 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".latihan_1.NormalPermission"
-            android:exported="true">
+            android:name=".latihan_2.WifiPermission"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".latihan_1.NormalPermission"
+            android:exported="true">
+
         </activity>
 
         <activity

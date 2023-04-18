@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -17,8 +20,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Permission"
         tools:targetApi="31">
+
+        <provider
+            android:authorities="com.example.android_permission.latihan_4.CameraPermission.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_file"/>
+        </provider>
+
         <activity
-            android:name=".latihan_3.DangerousPermission"
+            android:name=".latihan_4.CameraPermission"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,13 +43,15 @@
         </activity>
 
         <activity
-            android:name=".latihan_2.WifiPermission"
+            android:name=".latihan_3.DangerousPermission"
             android:exported="true">
-
         </activity>
         <activity
-            android:name=".latihan_1.NormalPermission"
+            android:name=".latihan_2.WifiPermission"
             android:exported="true"></activity>
+        <activity
+            android:name=".latihan_1.NormalPermission"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
